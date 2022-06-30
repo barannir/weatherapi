@@ -1,0 +1,107 @@
+/*
+фон блока
+углы блока
+внутринний отступ
+максимальная ширина блока
+CSS позиционирование - центр
+тень блока
+*/
+
+body {
+    background: url("../img/1.jpg") 0 0 / cover no-repeat;
+}
+
+.weather {
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 450px;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+
+/*позиционирование гивки в центре блока*/
+
+.weather__loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*максимальная ширина шивки*/
+
+.weather__loading img {
+    max-width: 50px;
+}
+
+.weather__header {
+    display: flex;
+}
+
+
+/*
+базовый развем элемента авто
+разрешает уменьшатся элементу по отношению basis
+разрешает увеличаться по отношению basis
+тем самым сдвинув img cloud - на право
+*/
+
+.weather__main {
+    flex-basis: auto;
+    flex-shrink: 1;
+    flex-grow: 1;
+}
+
+
+/*
+текст Kyiv
+размер шрифта
+жирный шрифт
+внещний отступ текса от род.контейнера
+*/
+
+.weather__city {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+
+/*текст Cloud*/
+
+.weather__status {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.weather__body {}
+
+.weather__icon {}
+
+
+/*цифра температуры*/
+
+.weather__temp {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+
+/*написание псевдоэлемента after:: для температуры и для чувствуется как*/
+
+
+/*
+display: inline-block - основным отличием является то, что display: inline-block позволяет задавать ширину и высоту элемента.
+
+*/
+
+.weather__feels-like {}
+
+.weather__temp::after,
+.weather__feels-like::after {
+    display: inline-block;
+    margin-left: 5px;
+    content: "°C";
+}
